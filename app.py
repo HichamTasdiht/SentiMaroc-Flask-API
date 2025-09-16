@@ -6,6 +6,8 @@ from scipy import sparse
 
 # Create a Flask web application instance.
 app = Flask(__name__)
+# This line reads the SECRET_KEY from the environment variables set on Railway
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 
 
 # Define a route for the home page ("/")
