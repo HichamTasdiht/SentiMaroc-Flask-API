@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask API</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Hello to SentiMaroc Flask API!</h1>
+        <div class="api-description">
+            <h2>API Usage 📋</h2>
+            <p>This API contains two endpoints that consume machine learning models to analyze text related to products. Here's how to use them:</p>
+
+            <hr>
+
+            <h3>1. Sentiment Prediction</h3>
+            <p>Predicts the overall sentiment (positive, negative, or neutral) of Moroccan people about a product.</p>
+            <ul>
+                <li><strong>Endpoint:</strong> <code>/predict_sentiment</code></li>
+                <li><strong>Method:</strong> <code>POST</code></li>
+                <li><strong>JSON Parameters:</strong>
+                    <ul>
+                        <li><code>"product_name"</code>: The name of the product.</li>
+                        <li><code>"brand_name"</code>: The brand of the product.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h3>2. Review Analysis</h3>
+            <p>Analyzes a detailed review of a product based on a model trained on Moroccan product reviews.</p>
+            <ul>
+                <li><strong>Endpoint:</strong> <code>/analyze_review</code></li>
+                <li><strong>Method:</strong> <code>POST</code></li>
+                <li><strong>JSON Parameters:</strong>
+                    <ul>
+                        <li><code>"product_name"</code>: The name of the product.</li>
+                        <li><code>"brand_name"</code>: The brand of the product.</li>
+                        <li><code>"price"</code>: The price of the product.</li>
+                        <li><code>"date"</code>: The date of the review.</li>
+                        <li><code>"rating"</code>: The rating given (e.g., 1-5).</li>
+                        <li><code>"language"</code>: The language of the review ("Arabic" or "Darija").</li>
+                        <li><code>"review_text"</code>: The actual text of the review.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
