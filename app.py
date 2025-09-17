@@ -14,6 +14,7 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 # Define a route for the home page ("/")
 @app.route("/")
 def home():
+    print("Ping received from monitoring service.")
     return render_template("index.html")
 
 try:
